@@ -3,7 +3,6 @@ export default function Todo(props) {
         const res = await fetch(`/api/todos/${todoId}`, {
             method: "PUT",
             body: JSON.stringify({ status: todoStatus }),
-
             headers: {
                 "Content-Type": "application/json",
             },
@@ -22,7 +21,6 @@ export default function Todo(props) {
             })
         }
     }
-    //deleteTodo Function
     const deleteTodo = async (todoId) => {
         const res = await fetch(`/api/todos/${todoId}`, {
             method: "DELETE"
@@ -36,6 +34,7 @@ export default function Todo(props) {
             });
         }
     }
+
     return (
         <div className="todo">
             <p>{props.todo.todo}</p>
@@ -55,5 +54,4 @@ export default function Todo(props) {
             </div>
         </div>
     )
-    
-}
+  }
